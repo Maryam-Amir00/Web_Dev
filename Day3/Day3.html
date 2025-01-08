@@ -6,6 +6,80 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Tech Conference Registration</h1>
+    </header>
+    <main>
+        <form action="/submit" method="post">
+            <label for="First Name"><b>First Name:</b></label>
+            <input type="text" 
+            placeholder="Enter First Name" 
+            name="First Name" 
+            id="First Name">
+
+            <br>
+            <br>
+            <label for="Last Name"><b>Last Name:</b></label>
+            <input type="text" 
+            placeholder="Enter Last Name" 
+            name="Last Name" 
+            id="Last Name">
+            <br><br>
+
+            <label for="Email"><b>Email:</b></label>
+            <input type="email" 
+            placeholder="Enter Email" 
+            name="Email" 
+            id="Email" 
+            required>
+            <br><br>
+
+            <label for="Education Background"><b>Select Education Background: </b></label>
+            <select name="Education Background" 
+            id="Education Background">
+                <option value="">Please choose an option</option>
+                <option value="High School">High School</option>
+                <option value="Bachelor's">Bachelor's</option>
+                <option value="Master's">Master's</option>
+                <option value="Ph.D.">Ph.D.</option>
+            </select>
+            <br><br>
+
+            <label for="Session Selection"><b>Session Selection: </b></label>
+            <br>
+            <input type="checkbox" id="Machine Learning" name="Machine Learning" >
+            <label for="Machine Learning">Machine Learning</label>
+            <br>
+            <input type="checkbox" name="CyberSecurity" id="CyberSecurity">
+            <label for="CyberSecurity">CyberSecurity</label>
+            <br>
+            <input type="checkbox" id="Cloud Computing" name="Cloud Computing">
+            <label for="Cloud Computing">Cloud Computing</label>
+            <br>
+            <input type="checkbox" name="BlockChain" id="BlockChain">
+            <label for="BlockChain">BlockChain</label>
+            <br><br>
+
+            <label for="Dietary Preferences"><b>Dietary Preferences:</b></label>
+            <br>
+            <input type="radio" id="None" name="None">
+            <label for="None">None</label>
+            <br>
+            <input type="radio" name="Vegetarian" id="Vegetarian">
+            <label for="Vegetarian">Vegetarian</label>
+            <br>
+            <input type="radio" name="Vegan" id="Vegan">
+            <label for="Vegan">Vegan</label>
+            <br>
+            <input type="radio" name="Gluten-Free" id="Gluten-Free">
+            <label for="Gluten-Free">Gluten-Free</label>
+            <br><br>
+
+            <label for="Special Accommodations"><b>Special Accommodations:</b></label>
+            <br/>
+            <textarea name="Special Accommodations" id="Special Accommodations" minlength="20"
+            maxlength="500" rows="5" cols="50"></textarea>
+        </form>
+    </main>
 </body>
 </html>
