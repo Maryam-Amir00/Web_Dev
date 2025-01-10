@@ -1,0 +1,28 @@
+body {
+    font-family: 'Georgia', serif;
+    color: #503c33;
+    background-color: #fff8e7;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    color: #d2691e;
+}
+
+h2{
+    font-size: 28px;
+    color: #8b4513;
+}
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 20px;
+}
+
+footer {
+    font-size: 16px;
+    color: #8b4513;
+}
