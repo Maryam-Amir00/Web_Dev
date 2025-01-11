@@ -19,3 +19,31 @@ header{
     padding-bottom: 10px;
     padding-left: 1295px; 
 }
+
+#Google {
+    color: white;
+    text-align: center;
+    font-size: 100px;
+    margin-top: 180px;
+}
+
+input {
+    width: 500px;
+    background-color: gray;
+    height: 35px;
+    margin-left: 505px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: gray;
+    color: white;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+#button{
+    margin-top: 20px;
+    margin-left: 625px;
+}
+
