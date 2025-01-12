@@ -1,0 +1,17 @@
+img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.Image {
+    margin: 10px;
+    text-align: center;
+}
