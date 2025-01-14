@@ -1,5 +1,56 @@
 * {
     padding: 0;
     margin: 0;
-    background-color:rgb(103, 215, 154);
+    background-color:rgb(255, 209, 216);
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-rows: repeat(4 , 1fr);
+    margin: 10px;
+    padding: 10px;
+    width: 800px;
+    height: 100vh;
+}
+
+#image1 {
+    background-image: url(./Images/Art.jpeg);
+    background-size: cover;
+    grid-area: 1 / 1 / 2 / 3;
+}
+
+#image2 {
+    background-image: url(./Images/Balcony.jpeg);
+    background-size: cover;
+    grid-area: 1 / 4 / 3 / 3;
+}
+
+#image3 {
+    background-image: url(./Images/Butterfly.jpeg);
+    background-size: cover;
+    grid-area: 2 / 1 / 4 / 1;
+}
+
+#image4 {
+    background-image: url(./Images/Window.jpeg);
+    background-size: cover;
+    grid-area: 2 / 2 / 4 / 2;
+}
+
+#image5 {
+    background-image: url(./Images/Quote1.jpeg);
+    background-size: cover;
+}
+
+#image6 {
+    background-image: url(./Images/Motivation_Quote.jpeg);
+    background-size: cover;
+    grid-area: 4 / 1 / 4 / 3 ;
+}
+
+#image7 {
+    background-image: url(./Images/Quote.jpeg);
+    background-size: cover;
+    
 }
