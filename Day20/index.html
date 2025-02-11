@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Selectors Example</title>
+</head>
+<body>
+
+    <h1 id="main-title">Hello, DOM!</h1>
+    <p class="text">Paragraph 1</p>
+    <p class="text">Paragraph 2</p>
+    <p class="text">Paragraph 3</p>
+    <div class="container">
+        <span>Span 1</span>
+        <span>Span 2</span>
+    </div>
+
+    <script>
+        // Selecting an element by ID
+        let title = document.getElementById("main-title");
+        console.log("Element by ID:", title);
+
+        // Selecting elements by class name (HTMLCollection)
+        let paragraphs = document.getElementsByClassName("text");
+        console.log("HTMLCollection:", paragraphs);
+
+        // Selecting elements by tag name (HTMLCollection)
+        let spans = document.getElementsByTagName("span");
+        console.log("HTMLCollection (spans):", spans);
+
+        // Selecting multiple elements using querySelectorAll (NodeList)
+        let nodeList = document.querySelectorAll(".text");
+        console.log("NodeList:", nodeList);
+
+        // Looping through NodeList (forEach works)
+        nodeList.forEach((p) => console.log("NodeList item:", p));
+
+        // Looping through HTMLCollection (convert to array first)
+        Array.from(paragraphs).forEach((p) => console.log("HTMLCollection item:", p));
+    </script>
+
+</body>
+</html>
