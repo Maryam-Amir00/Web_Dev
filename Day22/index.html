@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <style>
         body {
             text-align: center;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             transition: background-color 0.5s;
         }
 
@@ -20,15 +21,17 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Click Here To Change Color</h1>
     <button id="button">Change Color</button>
     <script>
-        document.getElementById("button").addEventListener('click', function(){
-            const colors = ['red','aqua','grey', 'yellow', 'purple', 'pink' , 'orange'];
+        document.getElementById("button").addEventListener('click', function () {
+            const colors = ['red', 'aqua', 'grey', 'yellow', 'purple', 'pink', 'orange'];
             const selected = colors[Math.floor(Math.random() * colors.length)];
             document.body.style.backgroundColor = selected;
         })
     </script>
 </body>
+
 </html>
