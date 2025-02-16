@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slider</title>
     <style>
+        body {
+            background-color: palevioletred;
+        }
 
+        h1 {
+            text-align: center;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        img {
+            height: 300px;
+            border-radius: 20px;
+            margin: 20px;
+        }
+
+        button {
+            border: none;
+            background-color: palevioletred;
+            font-size: 50px;
+            cursor: pointer;
+        }
     </style>
 </head>
+
 <body>
+    <h1>Image Slider</h1>
+    <div class="container">
+        <button onclick="prev()">&#8630;</button>
+        <img id="Slider" src="./Assets/cat.png" alt="Cat Image">
+        <button onclick="next()">&#8631;</button>
+    </div>
     <script>
-        
+        const images = ["./Assets/cupcake.png", "./Assets/kitty.png", "./Assets/rabbit.png", "./Assets/watermelon.png"]
+
+        let index = 0;
+
+        function prev() {
+            index = (index - 1 + images.length) % images.length;
+            document.getElementById("Slider").src = images[index];
+        }
+
+        function next() {
+            index = (index + 1) % images.length;
+            document.getElementById("Slider").src = images[index];
+        }
     </script>
 </body>
+
 </html>
