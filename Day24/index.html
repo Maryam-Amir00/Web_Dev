@@ -1,21 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Picker</title>
     <style>
+        body {
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            transition: background-color 0.5s;
+        }
 
+        .container {
+            margin-top: 20px;
+        }
+
+        #colorPicker {
+            padding: 2px;
+            cursor: pointer;
+        }
+
+        button {
+            padding: 10px;
+            margin-left: 10px;
+            padding-bottom: 7px;
+            cursor: pointer;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
+
 <body>
     <h1>Pick a Color</h1>
     <div class="container">
         <input type="color" id="colorPicker">
-        <button>Reset</button>
+        <button onclick="reset()">Reset</button>
     </div>
     <script>
+        const color = document.getElementById("colorPicker");
 
+        color.addEventListener('input', function () {
+            document.body.style.backgroundColor = color.value;
+        })
+
+        function reset() {
+            document.body.style.backgroundColor = 'white';
+            color = '#ffffff';
+        }
     </script>
 </body>
+
 </html>
