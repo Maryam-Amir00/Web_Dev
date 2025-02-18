@@ -1,32 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ID Generator</title>
     <style>
+        body {
+            margin: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
+        .container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-container {
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 200px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .id-card {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            background-color: #e7f3ff;
+            display: none;
+        }
+
+        .id-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
     </style>
 </head>
+
 <body>
-    <h1>ID Card Generator</h1>
-
     <div class="container">
-        <input type="text" id="name" placeholder="Enter Name">
-        <input type="text" id="id" placeholder="Enter ID">
-        <input type="text" id="dep" placeholder="Enter Department">
-        <input type="file" id="image" placeholder="image/*">
-        <button>Generate ID</button>
-    </div>
+        <h1>ID Card Generator</h1>
 
-    <div class="id-card" id="idCard">
-        <img id="Profile" src="" alt="Profile Picture">
-        <h2 id="CardName"></h2>
-        <p><strong>ID:</strong> <span id="cardID"></span></p>
-        <p><strong>Department:</strong> <span id="cardDep"></span></p>
+        <div class="input-container">
+            <input type="text" id="name" placeholder="Enter Name">
+            <input type="text" id="id" placeholder="Enter ID">
+            <input type="text" id="dep" placeholder="Enter Department">
+            <input type="file" id="image" accept="image/*">
+            <button onclick="generateID()">Generate ID</button>
+        </div>
+
+        <div class="id-card" id="idCard">
+            <img id="Profile" src="" alt="Profile Picture">
+            <h2 id="CardName"></h2>
+            <p><strong>ID:</strong> <span id="cardID"></span></p>
+            <p><strong>Department:</strong> <span id="cardDep"></span></p>
+        </div>
     </div>
     <script>
-        
+        function generateID() {
+            let name = document.getElementById("name").value;
+            let idNumber = document.getElementById("id").value;
+            let depart = document.getElementById("dep").value;
+            let imageInput = document.getElementById("image").files[0];
+
+            if (name === "" || idNumber === "" || depart === "" || !imageInput) {
+                alert("Please fill all fields and upload an image.");
+                return;
+            }
+
+            let reader = new FileReader();
+            reader.onload = function (event) {
+                document.getElementById("Profile").src = event.target.result;
+            };
+            reader.readAsDataURL(imageInput);
+
+            document.getElementById("CardName").innerText = name;
+            document.getElementById("cardID").innerText = idNumber;
+            document.getElementById("cardDep").innerText = depart;
+
+            document.getElementById("idCard").style.display = "block";
+        }
     </script>
 </body>
+
 </html>
