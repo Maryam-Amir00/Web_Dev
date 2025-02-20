@@ -34,6 +34,10 @@
             cursor: pointer;
         }
 
+        button:hover {
+            background-color: #E5E1DA;
+        }
+
         #result {
             font-size: 20px;
             font-weight: bold;
@@ -45,14 +49,32 @@
 <body>
     <div class="container">
         <h1>Rock, Paper, Scissor</h1>
-        <button id="Rock">🪨 Rock</button>
-        <button id="Paper">📃 Paper</button>
-        <button id="Scissor">✂️ Scissor</button>
+        <button id="Rock" onclick="playGame('Rock')">🪨 Rock</button>
+        <button id="Paper" onclick="playGame('Paper')">📃 Paper</button>
+        <button id="Scissor" onclick="playGame('Scissor')">✂️ Scissor</button>
         <p id="result"></p>
     </div>
 
     <script>
+        function playGame(playerChoice) {
+            let choices = ["Rock", "Paper", "Scissor"];
+            let computerChoice = choices[Math.floor(Math.random() * 3)];
 
+            let result = "";
+            if (playerChoice === computerChoice) {
+                result = "It's a Draw! 🤝";
+            }
+            else if ((playerChoice === "Rock" && computerChoice === "Scissor") ||
+                (playerChoice === "Paper" && computerChoice === "Rock") ||
+                (playerChoice === "Scissor" && computerChoice === "Paper")) {
+                result = `You Win! 🎉 ${playerChoice} beats ${computerChoice}`;
+            }
+            else {
+                result = `You Lose! 😢 ${computerChoice} beats ${playerChoice}`;
+            }
+
+            document.getElementById("result").innerText = result;
+        }
     </script>
 </body>
 
