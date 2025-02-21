@@ -1,6 +1,6 @@
-// Creating a promise
+
 let myPromise = new Promise((resolve, reject) => {
-    let success = true; // Change to false to trigger reject
+    let success = true; 
 
     if (!success) {
         resolve("✅ Operation was successful!");
@@ -9,11 +9,11 @@ let myPromise = new Promise((resolve, reject) => {
     }
 });
 
-// Handling the promise
+
 myPromise
     .then((message) => {
-        console.log("THEN:", message); // Runs if resolved
+        console.log("THEN:", message); 
     })
     .catch((error) => {
-        console.log("CATCH:", error); // Runs if rejected
+        console.log("CATCH:", error); 
     });
