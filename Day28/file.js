@@ -1,4 +1,3 @@
-
 let myPromise = new Promise((resolve, reject) => {
     let success = true; 
 
