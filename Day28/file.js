@@ -9,4 +9,11 @@ let myPromise = new Promise((resolve, reject) => {
     }
 });
 
-
+// Handling the promise
+myPromise
+    .then((message) => {
+        console.log("THEN:", message); // Runs if resolved
+    })
+    .catch((error) => {
+        console.log("CATCH:", error); // Runs if rejected
+    });
