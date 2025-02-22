@@ -5,14 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch User Data</title>
     <style>
-
+        
     </style>
 </head>
 <body>
     <h1>Fetch User Data</h1>
-    <button>Get Data</button>
+    <button onclick="getUserData()">Get Data</button>
     <div class="user-info" id="userInfo"></div>
     <script>
+        function fetchUserData(){
+            return new Promise(function (resolve , reject){
+                setTimeout(function (){
+                    const success = Math.random() > 0.5;
+                    if (success){
+                        resolve({Name: 'Lojain' , age: 23, Department: "MSC"})
+                    }else {
+                        reject("Failed to fetch Data.")
+                    }
+                },2000)
+            });
+        }
+
+        function getUserData(){
+            const userContainer = document.getElementById('userInfo');
+            userContainer.innerHTML = "Loading..."
+            userContainer.style.display = "block";
+
+            fetchUserData().then(function (user){
+                userContainer.innerHTML = `
+                        <strong>Name:</strong> ${user.Name} <br>
+                        <strong>Age:</strong> ${user.age} <br>
+                        <strong>Department:</strong> ${user.Department}
+                    `;
+                    userContainer.classList.remove("error");
+            }).catch(function(error) {
+                userContainer.innerHTML = error;
+                userContainer.classList.add("error");
+            });
+        }
 
     </script>
 </body>
