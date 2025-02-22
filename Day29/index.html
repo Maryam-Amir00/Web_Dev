@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fetch User Data</title>
     <style>
-        
+        body {
+            text-align: center;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            background-color: #F9F7F7;
+        }
+
+        button {
+            background-color: #3F72AF;
+            border: none;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -16,7 +31,7 @@
         function fetchUserData(){
             return new Promise(function (resolve , reject){
                 setTimeout(function (){
-                    const success = Math.random() > 0.5;
+                    const success = Math.random() > 0.3;
                     if (success){
                         resolve({Name: 'Lojain' , age: 23, Department: "MSC"})
                     }else {
