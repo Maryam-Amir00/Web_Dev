@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,7 @@
     <style>
         body {
             text-align: center;
-            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             background-color: #F9F7F7;
 
         }
@@ -29,13 +30,13 @@
         }
 
         .user-info {
-            display: none; 
-            background: rgba(173, 216, 230, 0.7); 
+            display: none;
+            background: rgba(173, 216, 230, 0.7);
             padding: 15px;
             border-radius: 8px;
             width: 250px;
-            margin: 20px auto; 
-            text-align: left; 
+            margin: 20px auto;
+            text-align: left;
             font-size: 18px;
         }
 
@@ -44,41 +45,43 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Fetch User Data</h1>
     <button onclick="getUserData()">Get Data</button>
     <div class="user-info" id="userInfo"></div>
     <script>
-        function fetchUserData(){
-            return new Promise(function (resolve , reject){
-                setTimeout(function (){
+        function fetchUserData() {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
                     const success = Math.random() > 0.3;
-                    if (success){
-                        resolve({Name: 'Lojain' , age: 23, Department: "MSC"})
-                    }else {
+                    if (success) {
+                        resolve({ Name: 'Lojain', age: 23, Department: "MSC" })
+                    } else {
                         reject("Failed to fetch Data.")
                     }
-                },2000)
+                }, 2000)
             });
         }
 
-        function getUserData(){
+        function getUserData() {
             const userContainer = document.getElementById('userInfo');
             userContainer.innerHTML = "Loading..."
             userContainer.style.display = "block";
 
-            fetchUserData().then(function (user){
+            fetchUserData().then(function (user) {
                 userContainer.innerHTML = `
                         <strong>Name:</strong> ${user.Name} <br>
                         <strong>Age:</strong> ${user.age} <br>
                         <strong>Department:</strong> ${user.Department}
                     `;
-                    userContainer.classList.remove("error");
-            }).catch(function(error) {
+                userContainer.classList.remove("error");
+            }).catch(function (error) {
                 userContainer.innerHTML = error;
                 userContainer.classList.add("error");
             });
         }
     </script>
 </body>
+
 </html>
