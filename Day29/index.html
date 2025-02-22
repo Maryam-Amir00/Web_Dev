@@ -9,6 +9,7 @@
             text-align: center;
             font-family:Verdana, Geneva, Tahoma, sans-serif;
             background-color: #F9F7F7;
+
         }
 
         button {
@@ -20,6 +21,26 @@
             cursor: pointer;
             color: white;
             font-size: 20px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #112D4E;
+        }
+
+        .user-info {
+            display: none; 
+            background: rgba(173, 216, 230, 0.7); 
+            padding: 15px;
+            border-radius: 8px;
+            width: 250px;
+            margin: 20px auto; 
+            text-align: left; 
+            font-size: 18px;
+        }
+
+        .error {
+            color: red;
         }
     </style>
 </head>
@@ -58,7 +79,6 @@
                 userContainer.classList.add("error");
             });
         }
-
     </script>
 </body>
 </html>
