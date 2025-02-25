@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,51 @@
 
     </style>
 </head>
+
 <body>
     <div class="container">
         <h2>Password Strength Checker</h2>
-        <input type="password" id="Password" placeholder="Enter Your Password" >
-        <p id="Strength"></p>
+        <input type="password" id="password" placeholder="Enter Your Password">
+        <p id="strength"></p>
     </div>
-    
-    <script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const passwordInput = document.getElementById('password');
+            const strengthIndicator = document.getElementById('strength');
+
+            passwordInput.addEventListener("input", function () {
+                const password = passwordInput.value;
+                const strength = checkPasswordStrength(password);
+
+                strengthIndicator.textContent = `Strength: ${strength}`;
+                strengthIndicator.style.color = getColor(strength)
+            })
+        })
+
+        function checkPasswordStrength(password) {
+            let strength = "Weak";
+
+            if (password.length >= 8) {
+                if (/[A-Z]/.test(password) && /[a-z]/.test(password) && /\d/.test(password) && /[!@#$%^&*]/.test(password)) {
+                    strength = "Strong";
+                } else if (/\d/.test(password) && /[A-Za-z]/.test(password)) {
+                    strength = "Medium";
+                }
+            }
+
+            return strength;
+        }
+
+        function getColor(strength) {
+            switch (strength) {
+                case "Weak": return "red";
+                case "Medium": return "orange";
+                case "Strong": return "green";
+                default: return "black";
+            }
+        }
     </script>
 </body>
+
 </html>
