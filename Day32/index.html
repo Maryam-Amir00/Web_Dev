@@ -27,7 +27,6 @@
             background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 10%, rgba(0, 0, 0, 0.9) 80%);
             border-radius: 50%;
             pointer-events: none;
-            /* Allow clicking through the light */
             transform: translate(-50%, -50%);
         }
     </style>
@@ -36,6 +35,11 @@
 <body>
     <div class="flashlight"></div>
     <script>
+        document.addEventListener("mousemove", (event) => {
+    const flashlight = document.querySelector(".flashlight");
+    flashlight.style.left = `${event.clientX}px`;
+    flashlight.style.top = `${event.clientY}px`;
+});
 
     </script>
 </body>
