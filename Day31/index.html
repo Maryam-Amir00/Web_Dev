@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Github User Finder</title>
     <style>
-
+        body { font-family: Arial, sans-serif; text-align: center; }
+        #profile { display: none; margin-top: 20px; }
+        img { width: 150px; border-radius: 50%; }
     </style>
 </head>
 
@@ -15,20 +17,46 @@
     <div class="container">
         <h2>🔍 GitHub User Finder</h2>
         <input type="text" id="username" placeholder="Enter Github Username">
-        <button>Search</button>
+        <button onclick="getUser()">Search</button>
 
         <div id="profile">
-        <img id="avatar">
-        <h3 id="name"></h3>
-        <p id="bio"></p>
-        <p>Followers: <span id="followers"></span> | Following: <span id="following"></span></p>
-        <p>Public Repos: <span id="repos"></span></p>
-        <a id="github-link" target="_blank">View Profile</a>
+            <img id="avatar">
+            <h3 id="name"></h3>
+            <p id="bio"></p>
+            <p>Followers: <span id="followers"></span> | Following: <span id="following"></span></p>
+            <p>Public Repos: <span id="repos"></span></p>
+            <a id="github-link" target="_blank">View Profile</a>
         </div>
     </div>
 
     <script>
-        
+        async function getUser() {
+            const username = document.getElementById('username').value;
+            const url = `https://api.github.com/users/${username}`;
+
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error("User Not Found");
+                }
+
+                const user = await response.json;
+                console.log(user);
+
+                document.getElementById("profile").style.display = "block";
+                document.getElementById("avatar").src = user.avatar_url;
+                document.getElementById("name").innerText = user.name || "No Name Available";
+                document.getElementById("bio").innerText = user.bio || "No Bio Available";
+                document.getElementById("followers").innerText = user.followers;
+                document.getElementById("following").innerText = user.following;
+                document.getElementById("repos").innerText = user.public_repos;
+                document.getElementById("github-link").href = user.html_url;
+                document.getElementById("github-link").innerText = "View GitHub Profile";
+            } catch (error) {
+                alert(error.message);
+                document.getElementById("profile").style.display = "none";
+            }
+        }
     </script>
 </body>
 
