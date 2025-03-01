@@ -12,7 +12,7 @@
 
 <body>
     <div class="container">
-        <p id="counter">0</p>
+        <p id="count">0</p>
         <div class="button">
             <button id="increase">Increase</button>
             <button id="reset">Reset</button>
@@ -20,7 +20,27 @@
         </div>
     </div>
     <script>
+        let count = 0;
 
+        const countDisplay = document.getElementById('count');
+        const increaseBtn = document.getElementById('increase');
+        const resetBtn = document.getElementById('reset');
+        const decreaseBtn = document.getElementById('decrease');
+
+        increaseBtn.addEventListener('click', function () {
+            count++;
+            countDisplay.textContent = count;
+        });
+
+        resetBtn.addEventListener('click', function () {
+            count = 0;
+            countDisplay.textContent = count;
+        })
+
+        decreaseBtn.addEventListener('click', function () {
+            count--;
+            countDisplay.textContent = count;
+        })
     </script>
 </body>
 
