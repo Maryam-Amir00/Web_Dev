@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Random Quote Generator</h1>
@@ -15,7 +17,21 @@
         <button id="newQuote">New Quote</button>
     </div>
     <script>
+        const quotes = [
+            "Believe in yourself!",
+            "Keep pushing forward.",
+            "The only limit is your mind.",
+            "Work hard in silence, let success make the noise.",
+            "Stay positive and strong.",
+            "Don't stop until you're proud.",
+            "Dream it. Wish it. Do it."
+        ];
 
+        document.getElementById('newQuote').addEventListener('click', function () {
+            let randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById("quote").innerText = quotes[randomIndex];
+        })
     </script>
 </body>
+
 </html>
