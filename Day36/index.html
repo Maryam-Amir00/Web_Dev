@@ -6,7 +6,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StopWatch</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
 
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #534e57 10%, #63aecb 100%);
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .stopwatch {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-weight: 700;
+            color: #fff;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            flex: 1;
+            margin: 5px;
+            padding: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        #start {
+            background: #2ecc71;
+            color: white;
+        }
+
+        #stop {
+            background: #e74c3c;
+            color: white;
+        }
+
+        #reset {
+            background: #3498db;
+            color: white;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
     </style>
 </head>
 
