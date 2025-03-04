@@ -83,6 +83,20 @@ p {
         </div>
     </div>
 
-    <script></script>
+    <script>
+        const textInput = document.getElementById("text-input");
+const charCount = document.getElementById("char-count");
+const wordCount = document.getElementById("word-count");
+
+textInput.addEventListener("input", () => {
+    let text = textInput.value;
+
+    charCount.textContent = text.length;
+
+    let words = text.trim().split(/\s+/);
+    wordCount.textContent = words[0] === "" ? 0 : words.length;
+});
+
+    </script>
 </body>
 </html>
