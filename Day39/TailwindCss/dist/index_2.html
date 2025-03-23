@@ -4,49 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard Cards</title>
-    <link rel="stylesheet" href="output.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 p-6 flex justify-center items-center min-h-screen">
+<body class="bg-gray-100 flex justify-center items-center min-h-screen p-6">
+    
+    <!-- Container for all cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
-        <!-- Card 1 -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center gap-4">
-            <div class="bg-blue-100 p-4 rounded-full">
+        
+        <!-- Sales Card -->
+        <div class="bg-blue-500 text-white p-6 rounded-lg shadow-lg flex items-center gap-4 hover:shadow-xl transition duration-300">
+            <div class="bg-white p-3 rounded-full">
                 <svg class="w-8 h-8 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m-3-3H9m3-7a9 9 0 110 18 9 9 0 010-18z" />
                 </svg>
             </div>
             <div>
-                <h3 class="text-gray-600">Total Sales</h3>
+                <h3 class="text-lg font-semibold">Total Sales</h3>
                 <p class="text-2xl font-bold">$12,500</p>
-                <p class="text-green-500 text-sm">▲ 5% from last week</p>
+                <p class="text-green-300 text-sm">▲ 5% from last week</p>
             </div>
         </div>
         
-        <!-- Card 2 -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center gap-4">
-            <div class="bg-green-100 p-4 rounded-full">
+        <!-- Users Card -->
+        <div class="bg-green-500 text-white p-6 rounded-lg shadow-lg flex items-center gap-4 hover:shadow-xl transition duration-300">
+            <div class="bg-white p-3 rounded-full">
                 <svg class="w-8 h-8 text-green-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a9 9 0 00-9 9h18a9 9 0 00-9-9z" />
                 </svg>
             </div>
             <div>
-                <h3 class="text-gray-600">Total Users</h3>
+                <h3 class="text-lg font-semibold">Total Users</h3>
                 <p class="text-2xl font-bold">1.2K</p>
-                <p class="text-red-500 text-sm">▼ 2% from last week</p>
+                <p class="text-red-600 text-sm">▼ 2% from last week</p>
             </div>
         </div>
         
-        <!-- Card 3 -->
-        <div class="bg-white p-6 rounded-2xl shadow-lg flex items-center gap-4">
-            <div class="bg-yellow-100 p-4 rounded-full">
+        <!-- Orders Card -->
+        <div class="bg-yellow-500 text-white p-6 rounded-lg shadow-lg flex items-center gap-4 hover:shadow-xl transition duration-300">
+            <div class="bg-white p-3 rounded-full">
                 <svg class="w-8 h-8 text-yellow-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h11m-5-6h11M9 14h11m-6 6h6" />
                 </svg>
             </div>
             <div>
-                <h3 class="text-gray-600">Total Orders</h3>
+                <h3 class="text-lg font-semibold">Total Orders</h3>
                 <p class="text-2xl font-bold">350</p>
-                <p class="text-green-500 text-sm">▲ 8% from last week</p>
+                <p class="text-green-300 text-sm">▲ 8% from last week</p>
             </div>
         </div>
     </div>
