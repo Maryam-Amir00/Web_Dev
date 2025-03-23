@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "A Tailwind CSS project",
   "scripts": {
-    "build": "node build.js",
-    "watch": "node build.js --watch"
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "watch": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1"
