@@ -14,8 +14,8 @@ const FeedBackStats = ({good , neutral , bad}) => {
         <p>😢 Bad: <span>{bad}</span></p>
         <hr />
         <p>Total: <span>{total}</span></p>
-        <p>Average: <span>{average.toFixed(2)}</span></p>
-        <p>Positive: <span>{positivePercentage.toFixed(1)}%</span></p>
+        <p>Average: <span>{average}</span></p>
+        <p>Positive: <span>{positivePercentage}%</span></p>
       </div>
     </>
   )

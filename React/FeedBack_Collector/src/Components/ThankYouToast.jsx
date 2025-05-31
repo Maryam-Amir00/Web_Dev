@@ -1,12 +1,12 @@
 import React from 'react'
 import reactDom from 'react-dom'
 
-const ThankYouToast = ({onclose}) => {
+const ThankYouToast = ({onClose}) => {
   return (
     reactDom.createPortal(
         <div>
             💌 Thanks for your feedback!
-            <button onClick={onclose}>❌</button>
+            <button onClick={onClose}>❌</button>
         </div>,
         document.body
   )
