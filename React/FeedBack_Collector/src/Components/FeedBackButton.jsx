@@ -1,9 +1,9 @@
 import React from 'react'
 
-const FeedBackButton = ({label , onclick , color}) => {
+const FeedBackButton = ({label , onClick , color}) => {
   return (
     <>
-      <button className={`${color}`} onClick={onclick}>
+      <button className={`${color}`} onClick={onClick}>
         {label}
       </button>
     </>

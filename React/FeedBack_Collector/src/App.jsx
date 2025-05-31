@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import FeedBackButton from './Components/FeedBackButton'
 import FeedBackStats from './Components/FeedBackStats';
+import ThankYouToast from './Components/ThankYouToast';
 
 function App() {
 
@@ -15,7 +16,7 @@ function App() {
     if(type === "bad") setBad(bad + 1);
 
     setShowToast(true);
-    setTimeout(() => {setShowToast(false), 2000});
+    setTimeout(() => setShowToast(false), 2000);
   }
   
   return (
@@ -26,13 +27,13 @@ function App() {
           💖 Feedback Collector 💖
           </h1>
           <div>
-            <FeedBackButton label = "😊 Good" color="bg-green-400" onclick={() => handleOnClick('good')}/>
-            <FeedBackButton label = "😐 Neutral" color="bg-yellow-400" onclick={() => handleOnClick('neutral')}/>
-            <FeedBackButton label = "😞 Bad" color="bg-red-400" onclick={() => handleOnClick('bad')}/>
+            <FeedBackButton label = "😊 Good" color="bg-green-400" onClick={() => handleOnClick('good')}/>
+            <FeedBackButton label = "😐 Neutral" color="bg-yellow-400" onClick={() => handleOnClick('neutral')}/>
+            <FeedBackButton label = "😞 Bad" color="bg-red-400" onClick={() => handleOnClick('bad')}/>
           </div>
             <FeedBackStats good={good} neutral={neutral} bad={bad} />
         </div>
-
+          {showToast && <ThankYouToast onClose = {() => setShowToast(false)} />}
       </div>
     </>
   )
