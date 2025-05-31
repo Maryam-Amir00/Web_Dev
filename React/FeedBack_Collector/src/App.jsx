@@ -21,12 +21,12 @@ function App() {
   
   return (
     <>
-      <div>
-        <div>
-          <h1>
+      <div className='min-h-screen bg-gradient-to-br from-pink-300 via-purple-300 to-blue-300 flex items-center justify-center p-6'>
+        <div className='backdrop-blur-md bg-white/60 border border-white/30 rounded-2xl shadow-2xl p-8 max-w-md w-full text-center space-y-6'>
+          <h1 className='text-3xl font-bold text-pink-600'>
           💖 Feedback Collector 💖
           </h1>
-          <div>
+          <div className='flex justify-center gap-4'>
             <FeedBackButton label = "😊 Good" color="bg-green-400" onClick={() => handleOnClick('good')}/>
             <FeedBackButton label = "😐 Neutral" color="bg-yellow-400" onClick={() => handleOnClick('neutral')}/>
             <FeedBackButton label = "😞 Bad" color="bg-red-400" onClick={() => handleOnClick('bad')}/>
