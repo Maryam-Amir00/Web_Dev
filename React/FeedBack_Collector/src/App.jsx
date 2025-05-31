@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import FeedBackButton from './Components/FeedBackButton'
+import FeedBackStats from './Components/FeedBackStats';
 
 function App() {
 
@@ -29,7 +30,7 @@ function App() {
             <FeedBackButton label = "😐 Neutral" color="bg-yellow-400" onclick={() => handleOnClick('neutral')}/>
             <FeedBackButton label = "😞 Bad" color="bg-red-400" onclick={() => handleOnClick('bad')}/>
           </div>
-
+            <FeedBackStats good={good} neutral={neutral} bad={bad} />
         </div>
 
       </div>
